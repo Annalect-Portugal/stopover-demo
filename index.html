@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAP Portugal Stopover - Demo Previews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        @font-face {
+            font-family: 'GT Flexa VAR';
+            src: local('GT Flexa VAR'), local('GTFlexa-Variable'),
+                 url('assets/fonts/GT-Flexa-GX.woff2') format('woff2-variations');
+            font-weight: 100 900;
+        }
+
+        .font-gt-flexa {
+            font-family: 'GT Flexa VAR', 'Montserrat', sans-serif;
+            font-variation-settings: 'wght' 800, 'wdth' 100;
+        }
+
+        .tap-green { color: #8bb612; }
+        .bg-tap-green { background-color: #8bb612; }
+        
+        .preview-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .preview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .preview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .preview-card:hover::before {
+            opacity: 1;
+        }
+        
+        .preview-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .preview-card:hover .preview-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .preview-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-6 px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="assets/img/TAP-Logo.svg" alt="TAP Air Portugal" class="h-12">
+                <div class="border-l border-gray-300 pl-4">
+                    <h1 class="text-2xl font-bold text-gray-800">Stopover Campaign</h1>
+                    <p class="text-sm text-gray-500">Landing Page Demos</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-xs text-gray-400 uppercase tracking-wide">Demo Preview</p>
+                <p class="text-sm font-semibold text-gray-700">Market Versions</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-8 py-16">
+        
+        <!-- Introduction -->
+        <div class="text-center mb-16">
+            <span class="inline-block bg-green-100 text-[#8bb612] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
+                Interactive Demos
+            </span>
+            <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 font-gt-flexa">
+                Choose Your Market
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Select a localized version below to explore the TAP Portugal Stopover campaign landing page experience.
+            </p>
+        </div>
+
+        <!-- Preview Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            
+            <!-- US Market Card -->
+            <a href="tap-demo-lp-us.html" class="preview-card bg-white rounded-2xl shadow-lg overflow-hidden block">
+                <div class="relative">
+                    <img src="assets/img/TAP-LP-US.png" alt="US Market Preview" class="preview-image">
+                    <div class="preview-overlay text-white">
+                        <h3 class="text-3xl font-bold mb-2">United States</h3>
+                        <p class="text-sm mb-4 opacity-90">English version optimized for the US market</p>
+                        <span class="inline-flex items-center bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm">
+                            View Demo <span class="ml-2">→</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">US Market</h4>
+                            <p class="text-sm text-gray-500">English (EN-US)</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">
+                            🇺🇸
+                        </div>
+                    </div>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Hero + Booking Widget</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interactive Quiz</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Exclusive Offers</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Brazil Market Card -->
+            <a href="tap-demo-lp-br.html" class="preview-card bg-white rounded-2xl shadow-lg overflow-hidden block">
+                <div class="relative">
+                    <img src="assets/img/TAP-LP-BR.png" alt="Brazil Market Preview" class="preview-image">
+                    <div class="preview-overlay text-white">
+                        <h3 class="text-3xl font-bold mb-2">Brasil</h3>
+                        <p class="text-sm mb-4 opacity-90">Versão em português otimizada para o mercado brasileiro</p>
+                        <span class="inline-flex items-center bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm">
+                            Ver Demo <span class="ml-2">→</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Mercado Brasil</h4>
+                            <p class="text-sm text-gray-500">Português (PT-BR)</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">
+                            🇧🇷
+                        </div>
+                    </div>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Hero + Widget de Reserva</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quiz Interativo</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Ofertas Exclusivas</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Features Overview -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Campaign Features</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        🎯
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Data Collection Quiz</h4>
+                    <p class="text-sm text-gray-600">Interactive quiz captures user preferences for personalized offers and segmentation</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        🎁
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Exclusive Offers</h4>
+                    <p class="text-sm text-gray-600">Personalized hotel discounts and experience packages unlock based on quiz results</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        ✈️
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Integrated Booking</h4>
+                    <p class="text-sm text-gray-600">Seamless flight booking widget positioned prominently in the hero section</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <img src="assets/img/TAP-Logo.svg" alt="TAP Air Portugal" class="h-8 mx-auto mb-4 opacity-70">
+            <p class="text-sm text-gray-400">TAP Air Portugal - Portugal Stopover Campaign</p>
+            <p class="text-xs text-gray-500 mt-2">Demo Landing Pages © 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
