@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAP Portugal Stopover - Demo Previews</title>
+    <title>TAP Portugal Stopover - Pré-visualizações Demo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -76,6 +76,65 @@
             object-fit: cover;
             object-position: top;
         }
+        
+        /* Mobile Frame Styles */
+        .mobile-frame {
+            position: relative;
+            width: 100%;
+            max-width: 375px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 36px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mobile-frame:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.1);
+        }
+        
+        .mobile-frame::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 24px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+        
+        .mobile-frame::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            z-index: 11;
+        }
+        
+        .mobile-screen {
+            position: relative;
+            width: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .mobile-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -84,15 +143,17 @@
     <header class="bg-white shadow-sm py-6 px-8">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-4">
+                <img src="assets/img/OM-One-Line-Black.svg" alt="Omnicom" class="h-8">
+                <div class="border-l border-gray-300 h-10"></div>
                 <img src="assets/img/TAP-Logo.svg" alt="TAP Air Portugal" class="h-12">
                 <div class="border-l border-gray-300 pl-4">
-                    <h1 class="text-2xl font-bold text-gray-800">Stopover Campaign</h1>
-                    <p class="text-sm text-gray-500">Landing Page Demos</p>
+                    <h1 class="text-2xl font-bold text-gray-800">Campanha Stopover</h1>
+                    <p class="text-sm text-gray-500">Demos de Landing Pages</p>
                 </div>
             </div>
             <div class="text-right">
-                <p class="text-xs text-gray-400 uppercase tracking-wide">Demo Preview</p>
-                <p class="text-sm font-semibold text-gray-700">Market Versions</p>
+                <p class="text-xs text-gray-400 uppercase tracking-wide">Pré-visualização Demo</p>
+                <p class="text-sm font-semibold text-gray-700">Versões de Mercado</p>
             </div>
         </div>
     </header>
@@ -103,13 +164,13 @@
         <!-- Introduction -->
         <div class="text-center mb-16">
             <span class="inline-block bg-green-100 text-[#8bb612] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
-                Interactive Demos
+                Demos Interativos
             </span>
             <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 font-gt-flexa">
-                Choose Your Market
+                Escolha o Seu Mercado
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Select a localized version below to explore the TAP Portugal Stopover campaign landing page experience.
+                Selecione uma versão localizada abaixo para explorar a experiência da landing page da campanha Stopover da TAP Portugal.
             </p>
         </div>
 
@@ -119,29 +180,29 @@
             <!-- US Market Card -->
             <a href="tap-demo-lp-us.html" class="preview-card bg-white rounded-2xl shadow-lg overflow-hidden block">
                 <div class="relative">
-                    <img src="assets/img/TAP-LP-US.png" alt="US Market Preview" class="preview-image">
+                    <img src="assets/img/TAP-LP-US.png" alt="Pré-visualização Mercado EUA" class="preview-image">
                     <div class="preview-overlay text-white">
-                        <h3 class="text-3xl font-bold mb-2">United States</h3>
-                        <p class="text-sm mb-4 opacity-90">English version optimized for the US market</p>
+                        <h3 class="text-3xl font-bold mb-2">Estados Unidos</h3>
+                        <p class="text-sm mb-4 opacity-90">Versão em inglês otimizada para o mercado americano</p>
                         <span class="inline-flex items-center bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm">
-                            View Demo <span class="ml-2">→</span>
+                            Ver Demo <span class="ml-2">→</span>
                         </span>
                     </div>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center justify-between">
                         <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-1">US Market</h4>
-                            <p class="text-sm text-gray-500">English (EN-US)</p>
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Mercado EUA</h4>
+                            <p class="text-sm text-gray-500">Inglês (EN-US)</p>
                         </div>
                         <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">
                             🇺🇸
                         </div>
                     </div>
                     <div class="mt-4 flex gap-2 flex-wrap">
-                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Hero + Booking Widget</span>
-                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interactive Quiz</span>
-                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Exclusive Offers</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Hero + Widget de Reserva</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quiz Interativo</span>
+                        <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Ofertas Exclusivas</span>
                     </div>
                 </div>
             </a>
@@ -149,7 +210,7 @@
             <!-- Brazil Market Card -->
             <a href="tap-demo-lp-br.html" class="preview-card bg-white rounded-2xl shadow-lg overflow-hidden block">
                 <div class="relative">
-                    <img src="assets/img/TAP-LP-BR.png" alt="Brazil Market Preview" class="preview-image">
+                    <img src="assets/img/TAP-LP-BR.png" alt="Pré-visualização Mercado Brasil" class="preview-image">
                     <div class="preview-overlay text-white">
                         <h3 class="text-3xl font-bold mb-2">Brasil</h3>
                         <p class="text-sm mb-4 opacity-90">Versão em português otimizada para o mercado brasileiro</p>
@@ -178,30 +239,119 @@
 
         </div>
 
+        <!-- Half-Page Ad Mockups -->
+        <div class="mb-16">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
+                    Mockups de Anúncios
+                </span>
+                <h3 class="text-4xl font-extrabold text-gray-900 mb-4 font-gt-flexa">
+                    Formatos Display
+                </h3>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Variações de anúncios display para ambos os mercados
+                </p>
+            </div>
+
+            <!-- Brazil Mockups -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mr-4">
+                        🇧🇷
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-800">Mercado Brasil</h4>
+                        <p class="text-sm text-gray-500">Variações em Língua Portuguesa</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="tap-demo-lp-br.html" class="text-center block">
+                        <div class="mobile-frame">
+                            <div class="mobile-screen">
+                                <img src="assets/img/hp-br-1.png" alt="Anúncio Brasil 1">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-sm font-semibold text-gray-700">Variação BR Momento Inicial</p>
+                            <p class="text-xs text-gray-500">Foco na "vibe" do user.</p>
+                        </div>
+                    </a>
+                    <a href="tap-demo-lp-br.html" class="text-center block">
+                        <div class="mobile-frame">
+                            <div class="mobile-screen">
+                                <img src="assets/img/hp-br-2.png" alt="Anúncio Brasil 2">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-sm font-semibold text-gray-700">Variação BR Momento Final</p>
+                            <p class="text-xs text-gray-500">Mensagem focada no quiz</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- US Mockups -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl mr-4">
+                        🇺🇸
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-800">Mercado Estados Unidos</h4>
+                        <p class="text-sm text-gray-500">Variações em Língua Inglesa</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="tap-demo-lp-us.html" class="text-center block">
+                        <div class="mobile-frame">
+                            <div class="mobile-screen">
+                                <img src="assets/img/hp-us-1.png" alt="Anúncio EUA 1">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-sm font-semibold text-gray-700">Variação EUA Momento Inicial</p>
+                            <p class="text-xs text-gray-500">Descubra o seu "flavour"</p>
+                        </div>
+                    </a>
+                    <a href="tap-demo-lp-us.html" class="text-center block">
+                        <div class="mobile-frame">
+                            <div class="mobile-screen">
+                                <img src="assets/img/hp-us-2.png" alt="Anúncio EUA 2">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-sm font-semibold text-gray-700">Variação EUA Momento Final</p>
+                            <p class="text-xs text-gray-500">Mensagem para desbloquear quiz</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Features Overview -->
         <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Campaign Features</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Funcionalidades da Campanha</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center">
                     <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                         🎯
                     </div>
-                    <h4 class="font-bold text-gray-800 mb-2">Data Collection Quiz</h4>
-                    <p class="text-sm text-gray-600">Interactive quiz captures user preferences for personalized offers and segmentation</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Quiz de Recolha de Dados</h4>
+                    <p class="text-sm text-gray-600">Quiz interativo captura preferências dos utilizadores para ofertas personalizadas e segmentação</p>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                         🎁
                     </div>
-                    <h4 class="font-bold text-gray-800 mb-2">Exclusive Offers</h4>
-                    <p class="text-sm text-gray-600">Personalized hotel discounts and experience packages unlock based on quiz results</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Ofertas Exclusivas</h4>
+                    <p class="text-sm text-gray-600">Descontos em hotéis personalizados e pacotes de experiências desbloqueados com base nos resultados do quiz</p>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 bg-green-100 text-[#8bb612] rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                         ✈️
                     </div>
-                    <h4 class="font-bold text-gray-800 mb-2">Integrated Booking</h4>
-                    <p class="text-sm text-gray-600">Seamless flight booking widget positioned prominently in the hero section</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Reserva Integrada</h4>
+                    <p class="text-sm text-gray-600">Widget de reserva de voos integrado posicionado em destaque na secção hero</p>
                 </div>
             </div>
         </div>
@@ -211,9 +361,13 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8 mt-20">
         <div class="max-w-7xl mx-auto px-8 text-center">
-            <img src="assets/img/TAP-Logo.svg" alt="TAP Air Portugal" class="h-8 mx-auto mb-4 opacity-70">
-            <p class="text-sm text-gray-400">TAP Air Portugal - Portugal Stopover Campaign</p>
-            <p class="text-xs text-gray-500 mt-2">Demo Landing Pages © 2026</p>
+            <div class="flex items-center justify-center gap-6 mb-4">
+                <img src="assets/img/OM-One-Line-White.svg" alt="Omnicom" class="h-6">
+                <div class="border-l border-gray-700 h-8"></div>
+                <img src="assets/img/TAP-Logo.svg" alt="TAP Air Portugal" class="h-8 opacity-70">
+            </div>
+            <p class="text-sm text-gray-400">TAP Air Portugal - Campanha Portugal Stopover</p>
+            <p class="text-xs text-gray-500 mt-2">Landing Pages Demo © 2026 | Powered by Omnicom</p>
         </div>
     </footer>
 
